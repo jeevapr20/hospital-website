@@ -1,0 +1,116 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
+{% load widget_tweaks %}
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Left Column (Images) -->
+      <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="d-flex flex-column">
+          <!-- First Image -->
+          <img
+            class="img-fluid rounded w-75 align-self-end"
+            src="{% static 'img/about-1.jpg' %}"
+            alt="About Us Image 1"
+          />
+          <!-- Second Image with overlapping effect -->
+          <img
+            class="img-fluid rounded w-50 bg-white pt-3 pe-3"
+            src="{% static 'img/about-2.jpg' %}"
+            alt="About Us Image 2"
+            style="margin-top: -25%"
+          />
+        </div>
+      </div>
+
+      <!-- Right Column (Login Form) -->
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+        <div
+          class="d-flex justify-content-center align-items-center"
+          style="height: 100%"
+        >
+       
+          <div
+            class="bg-light rounded p-5"
+            style="width: 100%; max-width: 400px"
+          >
+            <h1 class="mb-4">Welcome to CarePoint</h1>
+
+            <form method="post">
+              {% csrf_token %}
+
+              <!--check for non field errors-->
+
+              {% if form.non_field_errors %}
+              <div class="alert alert-danger">
+                {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+              {% endif %}
+
+              {% if messages %}
+              <div class="alert alert-success">
+                  {% for message in messages %}
+                      <p>{{ message }}</p>
+                  {% endfor %}
+              </div>
+          {% endif %}
+
+              <!--username-->
+              <div class="row g-1">
+                <div class="col-md-12">
+                  <label>Username</label>
+
+                  {{ form.username|add_class:"form-control custom-width" }} 
+
+                  {% if form.username.errors %}
+                  <div class="alert alert-danger">
+                    {% for error in form.username.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+
+                <!--password-->
+                <div class="col-md-12">
+                  <label>Password</label>
+
+                  {{ form.password|add_class:"form-control custom-width" }}
+
+                  {% if form.password.errors %}
+                  <div class="alert alert-danger">
+                    {% for error in form.password.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <div>
+                &nbsp
+                <button class="btn btn-primary w-100 py-1" type="submit">
+                  Login
+                </button>
+              </div>
+
+              <div class="mt-3 text-center">
+                <p>
+                  Don't have an account?
+                  <a href="{% url 'register' %}">Register here</a>
+                </p>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

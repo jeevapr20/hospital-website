@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-body text-center">
+            <h2 class="card-title text-success">Payment Successful</h2>
+            <p class="card-text">Your payment has been successfully processed for the appointment with Dr. {{ appointment.doctor.user.full_name }}.</p>
+            <div class="mt-4">
+                <h4 class="card-subtitle mb-2 text-muted">Appointment Details:</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Doctor:</strong> {{ appointment.doctor.user.full_name }}</li>
+                    <li class="list-group-item"><strong>Appointment Date:</strong> {{ appointment.appointment_date|date:"d M Y, h:i A" }}</li>
+                    <li class="list-group-item"><strong>Amount Paid:</strong> ₹250</li>
+                </ul>
+            </div>
+            <a href="{% url 'upcoming_appointments' %}" class="btn btn-primary mt-4">Back to Appointments</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

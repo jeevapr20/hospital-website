@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4 text-center">
+
+    <!-- Personal Info and Manage Appointments -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <p class="display-6" style="color:blue;">Dr.{{ doctor.user.full_name }} Dashboard</p>
+            <p>
+                <strong>Specialization:</strong> {{ doctor.specialization }} 
+             
+            </p>
+        </div>
+    </div>&nbsp
+
+    <div class="row">
+        <!-- Personal Info -->
+        <div class="col-lg-4 mb-4">
+            <div class="card bg-light border-0 shadow-sm">
+                <div class="card-body d-flex align-items-center p-4">
+                    <div class="icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 55px; height: 55px;">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="ms-4">
+                        <h5 class="mb-0"><a class="text-dark" href="{% url 'personal-information' %}">Update Personal Info</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Appointments -->
+        <div class="col-lg-4 mb-4">
+            <div class="card bg-light border-0 shadow-sm">
+                <div class="card-body d-flex align-items-center p-4">
+                    <div class="icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 55px; height: 55px;">
+                        <i class="fa fa-clock fa-2x"></i>
+                    </div>
+                    <div class="ms-4">
+                        <h5 class="mb-0"><a class="text-dark" href="{% url 'doctor_appointments' %}">Your Appointments</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends "base.html" %} {% load static%} {% block content %}
+<!-- Page Header Start -->
+<div
+  class="container-fluid page-header py-5 mb-5 wow fadeIn"
+  data-wow-delay="0.1s"
+>
+  <div class="container py-5">
+    <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
+    <nav aria-label="breadcrumb animated slideInDown">
+      <ol class="breadcrumb text-uppercase mb-0">
+        <li class="breadcrumb-item">
+          <a class="text-white" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a class="text-white" href="{% url 'feature' %}">Features</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a class="text-white" href="{% url 'team' %}">Team</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a class="text-white" href="{% url 'testimony' %}">Testimonial</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a class="text-white" href="{% url 'contact' %}">Contact</a>
+        </li>
+        <li class="breadcrumb-item text-primary active" aria-current="page">
+          Services
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 600px"
+    >
+      <p class="d-inline-block border rounded-pill py-1 px-4">Services</p>
+      <h1>Health Care Solutions</h1>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item bg-light rounded h-100 p-5">
+          <div
+            class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+            style="width: 65px; height: 65px"
+          >
+            <i class="fa fa-heartbeat text-primary fs-4"></i>
+          </div>
+          <h4 class="mb-3">Cardiology</h4>
+          <p class="mb-4">
+            Our Cardiology department offers comprehensive heart care, including
+            diagnosis, treatment, and prevention of heart-related conditions.
+            From routine check-ups to advanced procedures, our expert
+            cardiologists provide personalized care to ensure your heart health
+            is in the best hands.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item bg-light rounded h-100 p-5">
+          <div
+            class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+            style="width: 65px; height: 65px"
+          >
+            <i class="fa fa-x-ray text-primary fs-4"></i>
+          </div>
+          <h4 class="mb-3">Pulmonary</h4>
+          <p class="mb-4">
+            The Pulmonary department at CarePoint specializes in the diagnosis
+            and treatment of respiratory diseases, such as asthma, COPD (Chronic
+            Obstructive Pulmonary Disease), pneumonia, and lung cancer. Our team
+            of pulmonologists and respiratory therapists offer expert care to
+            help you breathe easier.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item bg-light rounded h-100 p-5">
+          <div
+            class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+            style="width: 65px; height: 65px"
+          >
+            <i class="fa fa-brain text-primary fs-4"></i>
+          </div>
+          <h4 class="mb-3">Neurology</h4>
+          <p class="mb-4">
+            Our Neurology department offers specialized care for disorders of
+            the brain, spinal cord, and nervous system. From diagnosing and
+            treating conditions such as epilepsy, migraines, and multiple
+            sclerosis, to managing neurodegenerative diseases, our neurologists
+            provide compassionate and cutting-edge care.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item bg-light rounded h-100 p-5">
+          <div
+            class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+            style="width: 65px; height: 65px"
+          >
+            <i class="fa fa-wheelchair text-primary fs-4"></i>
+          </div>
+          <h4 class="mb-3">Orthopedics</h4>
+          <p class="mb-4">
+            The Orthopedics department at CarePoint provides expert care for
+            musculoskeletal disorders, from sports injuries to joint
+            replacements. Our orthopedic surgeons specialize in both surgical
+            and non-surgical treatments for conditions affecting the bones,
+            muscles, ligaments, and joints.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item bg-light rounded h-100 p-5">
+          <div
+            class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+            style="width: 65px; height: 65px"
+          >
+            <i class="fa fa-tooth text-primary fs-4"></i>
+          </div>
+          <h4 class="mb-3">Dental Surgery</h4>
+          <p class="mb-4">
+            At CarePoint, our Dental Surgery department provides a wide range of
+            surgical treatments aimed at improving your oral health. From
+            routine tooth extractions to more complex oral surgeries, our
+            experienced dental surgeons utilize advanced techniques to ensure
+            you receive the best care.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item bg-light rounded h-100 p-5">
+          <div
+            class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+            style="width: 65px; height: 65px"
+          >
+            <i class="fa fa-vials text-primary fs-4"></i>
+          </div>
+          <h4 class="mb-3">Laboratory</h4>
+          <p class="mb-4">
+            Our state-of-the-art laboratory offers a wide range of diagnostic
+            services to help identify and monitor various medical conditions.
+            With the latest technology and highly trained lab technicians, we
+            ensure accurate results and fast turnarounds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+<!-- Service End -->

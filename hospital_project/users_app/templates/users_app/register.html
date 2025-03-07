@@ -1,0 +1,273 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+{% load widget_tweaks %}
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Left Column (Images) -->
+      <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="d-flex flex-column">
+          <!-- First Image -->
+          <img
+            class="img-fluid rounded w-75 align-self-end"
+            src="{% static 'img/about-1.jpg' %}"
+            alt="About Us Image 1"
+          />
+          <!-- Second Image with overlapping effect -->
+          <img
+            class="img-fluid rounded w-50 bg-white pt-3 pe-3"
+            src="{% static 'img/about-2.jpg' %}"
+            alt="About Us Image 2"
+            style="margin-top: -25%"
+          />
+        </div>
+      </div>
+
+      <!-- Right Column (Login Form) -->
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+        <div
+          class="d-flex justify-content-center align-items-center"
+          style="height: 100%"
+        >
+          <div
+            class="bg-light rounded p-5 shadow-lg"
+            style="width: 100%; max-width: 450px"
+          >
+            <h1 class="mb-4 text-center">Welcome to CarePoint</h1>
+            <form method="post">
+              {% csrf_token %}
+
+              <!-- Check for non-field errors -->
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+              {% for error in form.non_field_errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Username Field -->
+              <div class="form-group mb-3">
+                <label>Username</label>
+
+                {{ form.username|add_class:"form-control custom-width" }}
+                
+                {% if form.username.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.username.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+
+              <!-- First Name Field -->
+              <div class="form-group mb-3">
+                <label>First Name</label>
+                
+                {{ form.first_name|add_class:"form-control custom-width" }}
+               
+                {% if form.first_name.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.first_name.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+
+              <!--Last name field-->
+              <div class="form-group mb-3">
+                <label>Last Name</label>
+                
+                {{ form.last_name|add_class:"form-control custom-width" }}
+                
+                {% if form.last_name.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.last_name.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+
+              <!--Email field-->
+              <div class="form-group mb-3">
+                <label>Email</label>
+                
+                {{ form.email|add_class:"form-control custom-width" }}
+                
+                {% if form.email.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.email.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+
+              <!--Password-->
+              <div class="form-group mb-3">
+                <label>Password</label>
+                
+                {{ form.password1|add_class:"form-control custom-width" }}
+                
+                {% if form.password1.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.password1.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+
+              <!--Confirm password-->
+              <div class="form-group mb-3">
+                <label>Confirm Password</label>
+                
+                {{ form.password2|add_class:"form-control custom-width" }}
+              
+                {% if form.password2.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.password2.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+
+              <div class="form-group mb-4">
+                <label>User Type</label>
+                
+                {{ form.user_type|add_class:"form-control custom-blue" }}
+              
+                {% if form.user_type.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.user_type.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+              <style>
+                .custom-blue {
+                  background-color: rgb(23, 29, 34); /* Light blue background */
+                  color: black;
+                  border: 1px solid #5fa3e7; /* Light blue border */
+                }
+
+                .custom-blue:focus {
+                  background-color: rgb(
+                    26,
+                    154,
+                    228
+                  ); /* Slightly darker blue on focus */
+                  color: white;
+                  border-color: #3c80c3; /* Darker blue border on focus */
+                }
+              </style>
+
+              {% if form.user_type.value == 'doctor' %}
+
+              <div class="form-group mb-4">
+                <label>Specialization</label>
+                {{ form.specialization }}
+
+                {% if form.specialization.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.specialization.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              
+              </div>
+
+              {% elif form.user_type.value == 'patient' %}
+
+              <div class="form-group mb-4">
+                <label>Date of Birth</label>
+                {{ form.date_of_birth }}
+
+                {% if form.date_of_birth.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.date_of_birth.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+               
+              
+              </div>
+
+              <div class="form-group mb-4">
+                <label>Address</label>
+                {{ form.address }}
+
+                {% if form.address.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.address.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              
+              </div>
+
+                <div class="form-group mb-4">
+                  <label>Medical History</label>
+                {{ form.medical_history }}
+
+                {% if form.medical_history.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.medical_history.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              
+                </div>
+
+              {% elif form.user_type.value == 'staff' %}
+              <div class="form-group mb-4">
+                <label>Role</label>
+                {{ form.role }}
+
+                {% if form.role.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.role.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+             
+              </div>
+
+              <div class="form-group mb-4">
+                <label>Department</label>
+                {{ form.department }}
+
+                {% if form.department.errors %}
+                <div class="alert alert-danger">
+                  {% for error in form.department.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+            
+              </div>
+              {% endif %}
+
+              <button class="btn btn-primary w-100 py-2" type="submit">
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
