@@ -1,7 +1,3 @@
-Here is an updated version of your `README.md` with the necessary steps to configure and deploy the project using SQLite on PythonAnywhere.
-
----
-
 # CarePoint - Hospital Management System
 
 **CarePoint** is a hospital management platform designed to facilitate the management of appointments, payments, and prescriptions. The platform supports three types of users: **Staff**, **Doctors**, and **Patients**. The system allows users to register, login, and manage their appointments. Patients can book appointments and make payments via Stripe. Doctors can update appointment statuses, and Staff can view all appointment details.
