@@ -163,7 +163,7 @@ To deploy your Django project on **PythonAnywhere** with **SQLite** (the recomme
    - After making these changes, click on "Reload" on the PythonAnywhere **Web** tab.
 
 9. **Access the deployed site**:
-   - Visit your website at `http://jeeva07.pythonanywhere.com/`.
+   - Visit website at `http://jeeva07.pythonanywhere.com/`.
 
 ---
 
@@ -173,7 +173,7 @@ To deploy your Django project on **PythonAnywhere** with **SQLite** (the recomme
 
 - **Staff**: Staff members can view all appointments in the system. No modification rights for appointments or payments.
 - **Doctors**: Doctors can update the status of appointments to Confirmed, Pending, or Cancelled. After confirming an appointment, a payment link is provided to the patient. Doctors can prescribe medications (though the prescription module is not yet active).
-- **Patients**: Patients can book appointments with doctors. Upon confirmation of an appointment, patients can pay a fee of ₹250 for booking. Payments are processed using the Stripe payment gateway (still in progress).
+- **Patients**: Patients can book appointments with doctors. Upon confirmation of an appointment, patients can pay a fee of ₹250 for booking. Payments are processed using the Stripe payment gateway.
 
 ---
 
@@ -185,6 +185,3 @@ To deploy your Django project on **PythonAnywhere** with **SQLite** (the recomme
 2. **Doctor Dashboard**:
    - Enhance the doctor’s interface to manage appointments and prescriptions.
 
----
-
-Let me know if you need further adjustments to this readme or any more details!
