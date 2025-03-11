@@ -10,7 +10,7 @@ CarePoint is a hospital management platform designed to facilitate the managemen
   - **Patients**: Can book appointments and make payments.
 
 - **Stripe Payment Integration**: 
-  - Patients can pay ₹250 for confirmed appointments (integration is in progress, currently non-functional).
+  - Patients can pay ₹250 for confirmed appointments.
 
 - **Appointment Management**:
   - Doctors can confirm, cancel, or mark appointments as pending.
