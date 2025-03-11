@@ -44,21 +44,35 @@ class CustomUserCreationForm(UserCreationForm):
     
 class PatientInformationForm(forms.ModelForm):
     date_of_birth = forms.DateField(
-        widget=forms.DateInput(attrs={'type': 'date'}), 
+        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}), 
         required=False
     )
+    
     class Meta:
         model = Patient
         fields = ['date_of_birth', 'mobile', 'address', 'medical_history']
 
-
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['mobile'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Enter mobile number'})
+        self.fields['address'].widget.attrs.update({'class': 'form-control', 'rows': 3, 'placeholder': 'Enter address'})
+        self.fields['medical_history'].widget.attrs.update({'class': 'form-control', 'rows': 3, 'placeholder': 'Enter medical history'})
+        
 class DoctorInformationForm(forms.ModelForm):
     class Meta:
         model = Doctor
         fields = ['specialization']
 
-
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['specialization'].widget.attrs.update({'class': 'form-control'})
+        
 class StaffInformationForm(forms.ModelForm):
     class Meta:
         model = Staff
         fields = ['role', 'department']
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['role'].widget.attrs.update({'class': 'form-control'})
+        self.fields['department'].widget.attrs.update({'class': 'form-control'})
