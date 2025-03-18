@@ -34,8 +34,8 @@ To run the **CarePoint** project locally or deploy on PythonAnywhere, follow the
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/carepoint.git
-   cd carepoint
+   git clone https://github.com/jeevapr20/hospital-website.git
+   cd hospital-website
    ```
 
 2. **Set up a virtual environment** (optional but recommended):
